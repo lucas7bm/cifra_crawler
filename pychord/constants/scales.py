@@ -1,3 +1,11 @@
+MAJOR_SCALE = {
+    0, 2, 4, 5, 7, 9, 11
+}
+
+MINOR_SCALE = {
+    0, 2, 3, 5, 7, 8, 10
+}
+
 NOTE_VAL_DICT = {
     'Ab': 8,
     'A': 9,

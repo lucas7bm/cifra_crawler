@@ -63,7 +63,7 @@ class Quality(object):
         :return triad components of the chord
         """
         root_val = note_to_val(root)
-        triad = [v + root_val for v in copy.deepcopy(QUALITY_DICT[self.quality])[:3]]
+        triad = [(v + root_val) % 12 for v in copy.deepcopy(QUALITY_DICT[self.quality])[:3]]
 
         if visible:
             triad = [val_to_note(c, scale=root) for c in triad]

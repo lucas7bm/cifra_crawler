@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #coding: utf-8
 
-from pychord2 import Chord
+from pychord import Chord
 import requests
 from bs4 import BeautifulSoup
 from cifra import Cifra

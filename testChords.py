@@ -1,12 +1,13 @@
-from pychord2 import Chord, Quality
+from pychord import Chord, Quality
 from cifra import Cifra
 
-ch = Chord("G#dim/4")
-print("Letter: ", ch.components())
-print("Triad: ", ch.triad())
+ch = Chord("Am")
+print("Letter: ", ch.components(False))
+print("Triad: ", ch.triad(False))
 
 ch = Chord("Fmaj7/5")
 print("Number: ", ch.components())
+print("Triad: ", ch.triad(False))
 
 #problematic_chords = []
 
