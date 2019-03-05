@@ -37,20 +37,17 @@ class TonalPitchSpace:
         distance += len(set(self.level_a) ^ set([chord.triad(False)[0]]))
         distance += len(set(self.level_b) ^ set([chord.triad(False)[0], chord.triad(False)[2]]))
         distance += len(set(self.level_c) ^ set([chord.triad(False)[0], chord.triad(False)[1], chord.triad(False)[2]]))
-        print("Comp: ", chord.components(False))
-        print(set(v % 12 for v in chord.components(False)))
-        distance += len(set(self.level_c) ^ set(v % 12 for v in chord.components(False)))
+
+        distance += set(chord.components(False)).difference(set(self.level_d)).__len__()
+
 
         return distance
 
 chd = TonalPitchSpace(Chord("C"))
-print("Dist: ", chd.distance(Chord("G7")))
-#chd2 = TonalPitchSpace(Chord("Cm"))
-print()
-#chd = TonalPitchSpace(Chord("B"))
-chd2 = TonalPitchSpace(Chord("D"))
-print()
-#chd = TonalPitchSpace(Chord("D"))
-#chd2 = TonalPitchSpace(Chord("Dm"))
-
-print(set(chd.level_a) ^ set(chd2.level_a))
+print("Dist1: ", chd.distance(Chord("C")))
+print("Dist2: ", chd.distance(Chord("Dm")))
+print("Dist3: ", chd.distance(Chord("Em")))
+print("Dist4: ", chd.distance(Chord("F")))
+print("Dist5: ", chd.distance(Chord("G")))
+print("Dist6: ", chd.distance(Chord("Am")))
+print("Dist7: ", chd.distance(Chord("B°")))

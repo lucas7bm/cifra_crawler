@@ -47,7 +47,7 @@ class Quality(object):
         :return components of chord quality
         """
         root_val = note_to_val(root)
-        components = [v + root_val for v in self.components]
+        components = [(v + root_val) % 12 for v in self.components]
 
         if visible:
             components = [val_to_note(c, scale=root) for c in components]
