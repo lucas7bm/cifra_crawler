@@ -34,20 +34,40 @@ class TonalPitchSpace:
     def distance(self, chord):
         distance = 0
 
-        distance += len(set(self.level_a) ^ set([chord.triad(False)[0]]))
-        distance += len(set(self.level_b) ^ set([chord.triad(False)[0], chord.triad(False)[2]]))
-        distance += len(set(self.level_c) ^ set([chord.triad(False)[0], chord.triad(False)[1], chord.triad(False)[2]]))
+        try:
+            distance += len(set(self.level_a) ^ set([chord.triad(False)[0]]))
+            distance += len(set(self.level_b) ^ set([chord.triad(False)[0], chord.triad(False)[2]]))
+            distance += len(set(self.level_c) ^ set([chord.triad(False)[0], chord.triad(False)[1], chord.triad(False)[2]]))
+            distance += set(chord.components(False)).difference(set(self.level_d)).__len__()
 
-        distance += set(chord.components(False)).difference(set(self.level_d)).__len__()
+            
+
+            return distance
+        except:
+            return 0
+
+    def estimate_key(self, cifra):
+        print("Estimating the key of ", cifra.song, "in the context of ", self.chord)
+        self.distance()
 
 
-        return distance
+        return
 
-chd = TonalPitchSpace(Chord("C"))
-print("Dist1: ", chd.distance(Chord("C")))
-print("Dist2: ", chd.distance(Chord("Dm")))
-print("Dist3: ", chd.distance(Chord("Em")))
-print("Dist4: ", chd.distance(Chord("F")))
-print("Dist5: ", chd.distance(Chord("G")))
-print("Dist6: ", chd.distance(Chord("Am")))
-print("Dist7: ", chd.distance(Chord("B°")))
+
+
+
+chd = TonalPitchSpace(Chord("A"))
+print("DistC: ", chd.distance(Chord("C")))
+print("DistCm: ", chd.distance(Chord("Cm")))
+print("DistD: ", chd.distance(Chord("D")))
+print("DistDm: ", chd.distance(Chord("Dm")))
+print("DistE: ", chd.distance(Chord("E")))
+print("DistEm: ", chd.distance(Chord("Em")))
+print("DistF: ", chd.distance(Chord("F")))
+print("DistFm: ", chd.distance(Chord("Fm")))
+print("DistG: ", chd.distance(Chord("G")))
+print("DistGm: ", chd.distance(Chord("Gm")))
+print("DistA: ", chd.distance(Chord("A")))
+print("DistAm: ", chd.distance(Chord("Am")))
+print("DistB: ", chd.distance(Chord("B")))
+print("DistBm: ", chd.distance(Chord("Bm")))
