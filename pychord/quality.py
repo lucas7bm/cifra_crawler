@@ -38,6 +38,12 @@ class Quality(object):
         """ Get name of quality """
         return self._quality
 
+    def is_major(self):
+        if (copy.deepcopy(QUALITY_DICT[self.quality])[1] == 4):
+            return True
+        else:
+            return False
+
     def get_components(self, root='C', visible=False):
         """ Get components of chord quality
 

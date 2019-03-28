@@ -117,6 +117,9 @@ on={}""".format(self._chord, self._root, self._quality, self._appended, self._on
         """
         return self._quality.get_triad(root=self._root, visible=visible)
 
+    def is_major(self):
+        return self.quality.is_major()
+
     def _parse(self, chord):
         """ parse a chord
 

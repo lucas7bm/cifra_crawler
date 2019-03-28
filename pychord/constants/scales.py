@@ -1,10 +1,18 @@
-MAJOR_SCALE = {
+MAJOR_SCALE = [
     0, 2, 4, 5, 7, 9, 11
-}
+]
 
-MINOR_SCALE = {
+MINOR_SCALE = [
     0, 2, 3, 5, 7, 8, 10
-}
+]
+
+CIRCLE_MAJ = [
+    "C", "G", "D", "A", "E", "B", "Gb", "Db", "Ab", "Eb", "Bb", "F"
+]
+
+CIRCLE_MIN = [
+    "Am", "Em", "Bm", "Gbm", "Dbm", "Abm", "Ebm", "Bbm", "Fm", "Cm", "Gm", "Dm"
+]
 
 NOTE_VAL_DICT = {
     'Ab': 8,
