@@ -6,12 +6,17 @@ MINOR_SCALE = [
     0, 2, 3, 5, 7, 8, 10
 ]
 
-CIRCLE_MAJ = [
-    "C", "G", "D", "A", "E", "B", "Gb", "Db", "Ab", "Eb", "Bb", "F"
-]
+HARMONIC_FIELDS = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B",
+                   "Cm", "C#m", "Dm", "D#m", "Em", "Fm", "F#m", "Gm", "G#m", "Am", "A#m", "Bm"]
 
+#The 'X's are just a gambiarra
+CIRCLE_MAJ = [
+     "C", "G", "D", "A", "E", "B", "Gb", "Db", "Ab", "Eb", "Bb", "F",
+     "X", "X", "X", "X", "X", "X", "F#", "C#", "G#", "D#", "A#",  "X"
+]
 CIRCLE_MIN = [
-    "Am", "Em", "Bm", "Gbm", "Dbm", "Abm", "Ebm", "Bbm", "Fm", "Cm", "Gm", "Dm"
+     "Am", "Em", "Bm", "Gbm", "Dbm", "Abm", "Ebm", "Bbm", "Fm", "Cm", "Gm", "Dm",
+      "X",  "X",  "X", "F#m", "C#m", "G#m", "D#m", "A#m",  "X",  "X",  "X",  "X"
 ]
 
 NOTE_VAL_DICT = {
@@ -33,23 +38,6 @@ NOTE_VAL_DICT = {
     'Gb': 6,
     'G': 7,
     'G#': 8,
-}
-
-HARMONIC_FIELDS = {
-    0: "C",
-    0: "Cm",
-    0: "D",
-    0: "Dm",
-    0: "E",
-    0: "Em",
-    0: "F",
-    0: "Fm",
-    0: "G",
-    0: "Gm",
-    0: "A",
-    0: "Am",
-    0: "B",
-    0: "Bm",
 }
 
 VAL_NOTE_DICT = {

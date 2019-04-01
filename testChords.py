@@ -1,13 +1,30 @@
 from pychord import Chord, Quality
-from cifra import Cifra
 
-ch = Chord("Am")
-print("Letter: ", ch.components(False))
-print("Triad: ", ch.triad(False))
-
-ch = Chord("Fmaj7/5")
-print("Number: ", ch.components())
-print("Triad: ", ch.triad(False))
+print("C: ", Chord("C").triad(False))
+print("G: ", Chord("G").triad(False))
+print("D: ", Chord("D").triad(False))
+print("A: ", Chord("A").triad(False))
+print("E: ", Chord("E").triad(False))
+print("B: ", Chord("B").triad(False))
+print("Gb: ", Chord("Gb").triad(False))
+print("Db: ", Chord("Db").triad(False))
+print("Ab: ", Chord("Ab").triad(False))
+print("Eb: ", Chord("Eb").triad(False))
+print("Bb: ", Chord("Bb").triad(False))
+print("F: ", Chord("F").triad(False))
+print()
+print("Am: ", Chord("Am").triad(False))
+print("Em: ", Chord("Em").triad(False))
+print("Bm: ", Chord("Bm").triad(False))
+print("F#m: ", Chord("F#m").triad(False))
+print("C#m: ", Chord("C#m").triad(False))
+print("G#m: ", Chord("G#m").triad(False))
+print("Ebm: ", Chord("Ebm").triad(False))
+print("Bbm: ", Chord("Bbm").triad(False))
+print("Fm: ", Chord("Fm").triad(False))
+print("Cm: ", Chord("Cm").triad(False))
+print("Gm: ", Chord("Gm").triad(False))
+print("Dm: ", Chord("Dm").triad(False))
 
 #problematic_chords = []
 

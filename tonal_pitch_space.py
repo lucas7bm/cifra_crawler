@@ -5,14 +5,14 @@ from pychord.constants.scales import MAJOR_SCALE, MINOR_SCALE, CIRCLE_MAJ, CIRCL
 NON_DIATONIC_CONSTANT = 3
 
 class TonalPitchSpace:
-    """ Classe representando um Tonal Pitch Space de Lerdahl
+    """ Class representing a Lerdahl's tonal pitch space
 
-    :param str root: A raiz do acorde cujo campo harmônico vai gerar o Tonal Pitch Space
-    :param str quality: A qualidade desse campo harmônico (major/minor)
-    :param [int] level_a: o nível a, contendo somente a raiz do acorde
-    :param [int] level_b: o nível b, contendo a raiz e a quinta do acorde
-    :param [int] level_c: o nível triádico, contendo todas as notas do acorde
-    :param [int] level_d: o nível diatônico, contendo as notas da escala do campo harmônico atual
+    :param str root: The root of the chord which will represent the harmonic field
+    :param str quality: The quality of this harmonic field (major/minor)
+    :param [int] level_a: Lerdahl's level a, containing only the root of the chord
+    :param [int] level_b: level b, containing the root and the fifth
+    :param [int] level_c: triadic level, containing all of the chord's notes
+    :param [int] level_d: the diatonic level, containing the notes of the harmonic field (it's scale)
 
     """
     def __init__(self, chord):
@@ -39,28 +39,37 @@ class TonalPitchSpace:
             if(set(chord.triad(False)).issubset(set(self.level_d)) == False):
                 return distance + NON_DIATONIC_CONSTANT
 
+            #if it gets here, then it's a diatonic chord and it's circle-of-fifths distance will be calculated
+            #we divide the index by 12 to create a gambiarra in which same chords with different names return
+            #the same index value, like "C#" and "Db"
             if (self.chord.is_major()):
-                index = CIRCLE_MAJ.index(self.chord.chord)
+                index = CIRCLE_MAJ.index(self.chord.chord) % 12
             else:
-                index = CIRCLE_MIN.index(self.chord.chord)
-
+                index = CIRCLE_MIN.index(self.chord.chord) % 12
             for i in range(0, 2):
                 # rotating clockwise in the circle of fifths
                 if (set(chord.triad(False)).difference(set(Chord(CIRCLE_MAJ[(index + i) % 12]).triad(False))) == set()
                         or set(chord.triad(False)).difference(set(Chord(CIRCLE_MIN[(index + i) % 12]).triad(False))) == set()):
-                    return distance + i
+
+                    distance += i
                 # rotating counterclockwise
                 if (set(chord.triad(False)).difference(set(Chord(CIRCLE_MAJ[(index - i + 12) % 12]).triad(False))) == set()
                         or set(chord.triad(False)).difference(set(Chord(CIRCLE_MIN[(index - i + 12) % 12]).triad(False))) == set()):
-                    return distance + i
+                    distance += i
+
+            #assuming that the distance between C and Am on the circle is not 0, but 1, since we have to go "down" one step
+            if(self.chord.is_major() != chord.is_major()):
+                distance += 1
 
             return distance
         except:
+            print("Oops")
             return 0
 
 
 #tests
-chd = TonalPitchSpace(Chord("C"))
+chd = TonalPitchSpace(Chord("Db"))
+
 print("Dist C: ", chd.distance(Chord("C")))
 print("Dist Dm: ", chd.distance(Chord("Dm")))
 print("Dist Em: ", chd.distance(Chord("Em")))
@@ -78,5 +87,5 @@ print("Dist A: ", chd.distance(Chord("A")))
 print("Dist Bm: ", chd.distance(Chord("Bm")))
 print()
 
-print("Dist B°: ", chd.distance(Chord("B°")))
-print("Dist Bm7(5b): ", chd.distance(Chord("Bm7(b5)")))
+print("Dist minor: ", chd.distance(Chord("Dbm")))
+print("Dist same: ", chd.distance(Chord("C#")))

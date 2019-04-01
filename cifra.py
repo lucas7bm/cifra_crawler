@@ -1,3 +1,5 @@
+from pychord.constants.scales import CIRCLE_MAJ, CIRCLE_MIN
+from tonal_pitch_space import TonalPitchSpace
 from bs4 import BeautifulSoup
 import requests
 
@@ -41,6 +43,8 @@ class Cifra:
 
             self.present_chords = set(self.chord_array)
 
+    def estimate_tonality(self):
+        tps = TonalPitchSpace("C")
 
 #        print(self.song + ", uma música de " + self.artist + ", do gênero " + self.genre + ". O tom desta música é " + self.given_tone + ".")
 #        print("Esta música tem um total de", len(self.present_chords), "acordes, fazendo", len(self.chord_array), "usos de acorde.")
