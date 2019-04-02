@@ -1,4 +1,5 @@
-from pychord.constants.scales import CIRCLE_MAJ, CIRCLE_MIN
+from pychord import Chord
+from pychord.constants.scales import HARMONIC_FIELDS
 from tonal_pitch_space import TonalPitchSpace
 from bs4 import BeautifulSoup
 import requests
@@ -6,20 +7,19 @@ import requests
 
 class Cifra:
     """ Classe que representa uma cifra musical
-
     :param str url: A URL de origem da cifra
-
-
-
     """
 
     # Esta classe representa uma cifra musical com o intuito de ser processada depois.
     # ATRIBUTOS
-    #   artist, song, genre: Informações básicas da música
+    #   artist, title, genre: Informações básicas da música
     #            given_tone: A tonalidade central da música (informada pelo escritor da mesma)
     #           chord_array: Uma string contendo a sequência completa de acordes da música
     #        present_chords: Uma string contendo a lista de acordes existentes na cifra (sem repetição)
-    #
+    #         parsed_chords: Todos os acordes que foram devidamente
+    #                        identificados e processados através do pychord
+    #          fully_parsed: Um boolean que indica se todos os acordes foram interpretados
+
 
     def __init__(self, url):
         self.url = url
@@ -28,7 +28,7 @@ class Cifra:
 
         # Atributos básicos
         self.artist = soup_song.find('h2').text
-        self.song = soup_song.find('h1', class_="t1").text
+        self.title = soup_song.find('h1', class_="t1").text
         self.given_tone = soup_song.find(id="cifra_tom").a.text
 
         # Às vezes, quando um artista não possui gênero musical informado, o site exibe a letra inicial de seu nome
@@ -43,10 +43,43 @@ class Cifra:
 
             self.present_chords = set(self.chord_array)
 
-    def estimate_tonality(self):
-        tps = TonalPitchSpace("C")
+        self.parsed_chords = []
+        self.problematic_chords = []
+        for chord in self.chord_array:
+            try:
+                chord = Chord(chord)
+                self.parsed_chords.append(chord)
+            except:
+                self.problematic_chords.append(chord)
 
-#        print(self.song + ", uma música de " + self.artist + ", do gênero " + self.genre + ". O tom desta música é " + self.given_tone + ".")
+        self.fully_parsed = False
+        if (self.chord_array.__len__() == self.parsed_chords.__len__()):
+            self.fully_parsed = True
+
+
+    def harmonic_field_distance(self, field):
+        tonal_pitch_space = TonalPitchSpace(field)
+        distance = 0
+        for chord in self.parsed_chords:
+            distance += tonal_pitch_space.distance(chord)
+        return distance
+
+    def estimate_tonality(self):
+        fields_distances = []
+        for field in HARMONIC_FIELDS:
+
+            fields_distances.append([self.harmonic_field_distance(Chord(field)), field])
+        return sorted(fields_distances)
+
+#        print(self.title + ", uma música de " + self.artist + ", do gênero " + self.genre + ". O tom desta música é " + self.given_tone + ".")
 #        print("Esta música tem um total de", len(self.present_chords), "acordes, fazendo", len(self.chord_array), "usos de acorde.")
 #        print(self.present_chords)
 #        print()
+
+cifra = Cifra("https://www.cifraclub.com.br/vinicius-de-moraes/onde-anda-voce/")
+
+#print(cifra.parsed_chords, "\nTamanho do array:", cifra.parsed_chords.__len__())
+print(cifra.estimate_tonality())
+print()
+#print(cifra.problematic_chords)
+print("O tom de ", cifra.title, "de ", cifra.artist ," é: ", cifra.estimate_tonality()[0].__getitem__(1))

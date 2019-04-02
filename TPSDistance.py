@@ -34,7 +34,7 @@ for link in links:
                 print(chord, ": ", ch.components())
                 parsed_chords += 1
             except:
-                print("I see a ", chord, "chord on the song", link, ", but I can't read it! :(")
+                print("I see a ", chord, "chord on the title", link, ", but I can't read it! :(")
                 legivel = False
                 problematic_chords.append(chord)
                 problematic_songs.append(link)

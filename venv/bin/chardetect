@@ -1,4 +1,4 @@
-#!/home/lucas/PycharmProjects/CifraCrawler/venv/bin/python
+#!/home/lucas/PycharmProjects/cifra_crawler/venv/bin/python
 
 # -*- coding: utf-8 -*-
 import re

@@ -7,8 +7,7 @@ NON_DIATONIC_CONSTANT = 3
 class TonalPitchSpace:
     """ Class representing a Lerdahl's tonal pitch space
 
-    :param str root: The root of the chord which will represent the harmonic field
-    :param str quality: The quality of this harmonic field (major/minor)
+    :param Chord chord: The chord which generates the Pitch Space
     :param [int] level_a: Lerdahl's level a, containing only the root of the chord
     :param [int] level_b: level b, containing the root and the fifth
     :param [int] level_c: triadic level, containing all of the chord's notes
@@ -68,24 +67,24 @@ class TonalPitchSpace:
 
 
 #tests
-chd = TonalPitchSpace(Chord("Db"))
-
-print("Dist C: ", chd.distance(Chord("C")))
-print("Dist Dm: ", chd.distance(Chord("Dm")))
-print("Dist Em: ", chd.distance(Chord("Em")))
-print("Dist F: ", chd.distance(Chord("F")))
-print("Dist G: ", chd.distance(Chord("G")))
-print("Dist Am: ", chd.distance(Chord("Am")))
-print("Dist B: ", chd.distance(Chord("B")))
-print()
-print("Dist Cm: ", chd.distance(Chord("Cm")))
-print("Dist D: ", chd.distance(Chord("D")))
-print("Dist E: ", chd.distance(Chord("E")))
-print("Dist Fm: ", chd.distance(Chord("Fm")))
-print("Dist Gm: ", chd.distance(Chord("Gm")))
-print("Dist A: ", chd.distance(Chord("A")))
-print("Dist Bm: ", chd.distance(Chord("Bm")))
-print()
-
-print("Dist minor: ", chd.distance(Chord("Dbm")))
-print("Dist same: ", chd.distance(Chord("C#")))
+# chd = TonalPitchSpace(Chord("Db"))
+#
+# print("Dist C: ", chd.distance(Chord("C")))
+# print("Dist Dm: ", chd.distance(Chord("Dm")))
+# print("Dist Em: ", chd.distance(Chord("Em")))
+# print("Dist F: ", chd.distance(Chord("F")))
+# print("Dist G: ", chd.distance(Chord("G")))
+# print("Dist Am: ", chd.distance(Chord("Am")))
+# print("Dist B: ", chd.distance(Chord("B")))
+# print()
+# print("Dist Cm: ", chd.distance(Chord("Cm")))
+# print("Dist D: ", chd.distance(Chord("D")))
+# print("Dist E: ", chd.distance(Chord("E")))
+# print("Dist Fm: ", chd.distance(Chord("Fm")))
+# print("Dist Gm: ", chd.distance(Chord("Gm")))
+# print("Dist A: ", chd.distance(Chord("A")))
+# print("Dist Bm: ", chd.distance(Chord("Bm")))
+# print()
+#
+# print("Dist minor: ", chd.distance(Chord("Dbm")))
+# print("Dist same: ", chd.distance(Chord("C#")))
