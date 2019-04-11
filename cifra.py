@@ -19,7 +19,9 @@ class Cifra:
     #         parsed_chords: Todos os acordes que foram devidamente
     #                        identificados e processados através do pychord
     #          fully_parsed: Um boolean que indica se todos os acordes foram interpretados
-
+    #      fields_distances: O resultado do cálculo de distância utilizando todos os 24 campos harmônicos.
+    #                        É ordenado da menor distância (tonalidade mais provável) para a maior.
+    #            found_tone: A tonalidade encontrada,
 
     def __init__(self, url):
         self.url = url
@@ -56,6 +58,10 @@ class Cifra:
         if (self.chord_array.__len__() == self.parsed_chords.__len__()):
             self.fully_parsed = True
 
+        self.fields_distances = [()]
+        self.estimate_tonality()
+        self.found_tone = self.fields_distances[0].__getitem__(1)
+
 
     def harmonic_field_distance(self, field):
         tonal_pitch_space = TonalPitchSpace(field)
@@ -69,17 +75,19 @@ class Cifra:
         for field in HARMONIC_FIELDS:
 
             fields_distances.append([self.harmonic_field_distance(Chord(field)), field])
-        return sorted(fields_distances)
+        self.fields_distances = sorted(fields_distances)
 
 #        print(self.title + ", uma música de " + self.artist + ", do gênero " + self.genre + ". O tom desta música é " + self.given_tone + ".")
 #        print("Esta música tem um total de", len(self.present_chords), "acordes, fazendo", len(self.chord_array), "usos de acorde.")
 #        print(self.present_chords)
 #        print()
 
-cifra = Cifra("https://www.cifraclub.com.br/vinicius-de-moraes/onde-anda-voce/")
+cifra = Cifra("https://www.cifraclub.com.br/5-seco/feliz-pra-cachorro/")
 
 #print(cifra.parsed_chords, "\nTamanho do array:", cifra.parsed_chords.__len__())
-print(cifra.estimate_tonality())
-print()
 #print(cifra.problematic_chords)
-print("O tom de ", cifra.title, "de ", cifra.artist ," é: ", cifra.estimate_tonality()[0].__getitem__(1))
+print("O tom de ", cifra.title, "de ", cifra.artist ," é: ", cifra.found_tone, "\n")
+print(cifra.fields_distances, "\n")
+print(cifra.chord_array)
+print(cifra.fully_parsed)
+print(cifra.problematic_chords)
