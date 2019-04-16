@@ -2,6 +2,7 @@ from pychord import Chord
 from pychord.constants.scales import HARMONIC_FIELDS
 from tonal_pitch_space import TonalPitchSpace
 from bs4 import BeautifulSoup
+from test_database import TEST_DATABASE
 import requests
 
 
@@ -82,12 +83,18 @@ class Cifra:
 #        print(self.present_chords)
 #        print()
 
-cifra = Cifra("https://www.cifraclub.com.br/5-seco/feliz-pra-cachorro/")
+cifra = Cifra("https://www.cifraclub.com/earth-wind-and-fire/lets-groove/")
 
 #print(cifra.parsed_chords, "\nTamanho do array:", cifra.parsed_chords.__len__())
 #print(cifra.problematic_chords)
 print("O tom de ", cifra.title, "de ", cifra.artist ," é: ", cifra.found_tone, "\n")
 print(cifra.fields_distances, "\n")
-print(cifra.chord_array)
+#print(cifra.chord_array)
 print(cifra.fully_parsed)
 print(cifra.problematic_chords)
+
+i=0
+for x in TEST_DATABASE:
+    if(x.__getitem__(0) != ""):
+        i += 1
+        print(i, ": ", x.__getitem__(0))
