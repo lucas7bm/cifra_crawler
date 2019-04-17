@@ -1,5 +1,5 @@
 TEST_DATABASE = [
-    #MPB e Bossa
+    #MPB, Samba e Bossa
     ("https://www.cifraclub.com.br/djavan/oceano/", 'D'),
     ("https://www.cifraclub.com.br/djavan/sina/", 'A'),
     ("https://www.cifraclub.com.br/djavan/eu-te-devoro/", 'D'),
@@ -42,6 +42,91 @@ TEST_DATABASE = [
     ("https://www.cifraclub.com/marcelo-camelo/cara-valente/", 'F#'),
     ("https://www.cifraclub.com/marcelo-camelo/pois-e/", 'Em'),
 
+    ("https://www.cifraclub.com/nelson-goncalves/naquela-mesa/", 'Dm'),
+    ("https://www.cifraclub.com/nelson-goncalves/a-volta-do-boemio/", 'Am'),
+    ("https://www.cifraclub.com/adoniran-barbosa/trem-das-onze/", 'Am'),
+    ("https://www.cifraclub.com/adoniran-barbosa/saudosa-maloca/", 'Am'),
+    ("https://www.cifraclub.com/cartola/preciso-me-encontrar/", 'Dm'),
+
+    ("https://www.cifraclub.com/cartola/o-mundo-um-moinho/", 'A'),
+    ("https://www.cifraclub.com/cartola/as-rosas-nao-falam/", 'Dm'),
+    ("https://www.cifraclub.com/martinho-da-vila/mulheres/", 'Bm'),
+    ("https://www.cifraclub.com/benito-di-paula/retalhos-de-cetim/", 'Dm'),
+    ("https://www.cifraclub.com/alcione/nao-deixe-samba-morrer/", 'Bm'),
+
+    ("https://www.cifraclub.com/alcione/voce-me-vira-cabeca/", 'F#m'),
+    ("https://www.cifraclub.com/alcione/meu-ebano/", 'Gm'),
+    ("https://www.cifraclub.com/bezerra-da-silva/a-semente/", 'Dm'),
+    ("https://www.cifraclub.com/elis-regina/aguas-de-marco/", 'A'),
+    ("https://www.cifraclub.com/elis-regina/como-nossos-pais/", 'D'),
+
+    ("https://www.cifraclub.com/zeca-pagodinho/quando-gira-girou/", 'F'),
+    ("https://www.cifraclub.com/zeca-pagodinho/verdade/", 'F'),
+    ("https://www.cifraclub.com/zeca-pagodinho/faixa-amarela/", 'D'),
+    ("https://www.cifraclub.com/zeca-pagodinho/bagaco-da-laranja/", 'G'),
+    ("https://www.cifraclub.com/jorge-ben-jor/mas-que-nada/", 'Gm'),
+
+    ("https://www.cifraclub.com/jorge-ben-jor/chove-chuva/", 'Am'),
+    ("https://www.cifraclub.com/jorge-ben-jor/pais-tropical/", 'G'),
+    ("https://www.cifraclub.com/jorge-ben-jor/que-pena/", 'A'),
+    ("https://www.cifraclub.com/jorge-ben-jor/taj-mahal/", 'F#m'),
+    ("https://www.cifraclub.com/ze-ramalho/avohai/", 'D'),
+
+    ("https://www.cifraclub.com/ze-ramalho/sinonimo/", 'D'),
+    ("https://www.cifraclub.com/belchior/galos-noites-quintais/", 'A'),
+    ("https://www.cifraclub.com/belchior/apenas-um-rapaz-latino-americano/", 'E'),
+    ("https://www.cifraclub.com/belchior/como-nossos-pais/", 'G'),
+    ("https://www.cifraclub.com/chico-buarque/construcao/", 'Em'),
+
+    ("https://www.cifraclub.com/chico-buarque/roda-viva/", 'Bm'),
+    ("https://www.cifraclub.com/chico-buarque/geni-o-zepelim/", 'Cm'),
+    ("https://www.cifraclub.com/gonzaguinha/o-que-e-que-e/", 'D'),
+    ("https://www.cifraclub.com/gonzaguinha/asa-branca/", 'G'),
+    ("https://www.cifraclub.com/zeca-baleiro/telegrama/", 'Bm'),
+
+    ("https://www.cifraclub.com/zeca-baleiro/lenha/", 'C'),
+    ("https://www.cifraclub.com/zeca-baleiro/opio/", 'C'),
+    ("https://www.cifraclub.com/zeca-baleiro/proibida-pra-mim/", 'G'),
+    ("https://www.cifraclub.com/zeca-baleiro/babylon/", 'Dm'),
+    ("https://www.cifraclub.com/simone/vendedor-de-sonhos/", 'F#'),
+
+    ("https://www.cifraclub.com/milton-nascimento/cacador-de-mim/", 'G'),
+    ("https://www.cifraclub.com/milton-nascimento/beatriz/", 'E'),
+    ("https://www.cifraclub.com/gilberto-gil/sitio-do-pica-pau-amarelo/", 'G'),
+    ("https://www.cifraclub.com/gilberto-gil/eu-so-quero-um-xodo/", 'F'),
+    ("https://www.cifraclub.com/gilberto-gil/esperando-na-janela/", 'E'),
+
+    ("https://www.cifraclub.com/gilberto-gil/drao/", 'C'),
+    ("https://www.cifraclub.com/kasino/cant-get-over/", 'Cm'),
+    ("https://www.cifraclub.com/seu-jorge/tive-razao/", 'Em'),
+    ("https://www.cifraclub.com/seu-jorge/sao-gonca/", 'Am'),
+    ("https://www.cifraclub.com/seu-jorge/ze-do-caroco/", 'Dm'),
+
+
+    ("https://www.cifraclub.com/seu-jorge/mina-do-condominio/", 'Bm'),
+    ("https://www.cifraclub.com/seu-jorge/amiga-da-minha-mulher/", 'Am'),
+    ("", ''),
+    ("", ''),
+    ("https://www.cifraclub.com/seu-jorge/e-isso-ai/", ''),
+
+    ("", ''),
+    ("", ''),
+    ("", ''),
+    ("", ''),
+    ("", ''),
+
+    ("", ''),
+    ("", ''),
+    ("", ''),
+    ("", ''),
+    ("", ''),
+
+    ("", ''),
+    ("", ''),
+    ("", ''),
+    ("", ''),
+    ("", ''),
+
     ("", ''),
     ("", ''),
     ("", ''),
@@ -82,6 +167,24 @@ TEST_DATABASE = [
     ("https://www.cifraclub.com/louis-armstrong/what-wonderful-world/", 'F'),
 
     ("https://www.cifraclub.com/eric-clapton/autumn-leaves/", 'Bm'),
+    ("https://www.cifraclub.com.br/nina-simone/feeling-good/", 'Gm'),
+    ("https://www.cifraclub.com.br/john-mayer/slow-dancing-in-burning-room/", 'C#m'),
+    ("https://www.cifraclub.com.br/john-mayer/gravity/", 'G'),
+    ("https://www.cifraclub.com.br/john-mayer/free-fallin/", 'D'),
+
+    ("https://www.cifraclub.com.br/john-mayer/in-your-atmosphere/", 'E'),
+    ("https://www.cifraclub.com.br/jimi-hendrix/bold-as-love/", 'G#'),
+    ("", ''),
+    ("", ''),
+    ("", ''),
+
+    #Blues e Reggae
+    ("https://www.cifraclub.com.br/eric-clapton/tears-in-heaven/", 'A'),
+    ("https://www.cifraclub.com.br/eric-clapton/knocking-on-heavens-door/", 'G'),
+    ("https://www.cifraclub.com.br/eric-clapton/i-shot-the-sheriff/", 'Gm'),
+    ("", ''),
+    ("", ''),
+
     #R&B, Funk e Soul
     ("https://www.cifraclub.com/bill-withers/aint-no-sunshine/", 'Am'),
     ("https://www.cifraclub.com/bill-withers/lovely-day/", 'E'),
@@ -97,7 +200,7 @@ TEST_DATABASE = [
     ("https://www.cifraclub.com/ben-e-king/stand-by-me/", 'A'),
     ("https://www.cifraclub.com/earth-wind-and-fire/september/", 'A'),
     ("https://www.cifraclub.com/earth-wind-and-fire/lets-groove/", 'Bm'),
-    #Rock em geral
+    #Rock
     ("https://www.cifraclub.com/queen/bohemian-rhapsody/", 'G'),
     ("https://www.cifraclub.com/queen/love-of-my-life/", 'D'),
 
