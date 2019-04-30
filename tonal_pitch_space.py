@@ -38,7 +38,7 @@ class TonalPitchSpace:
             if(set(chord.triad(False)).issubset(set(self.level_d)) == False):
                 return distance + NON_DIATONIC_CONSTANT
 
-            #if it gets here, then it's a diatonic chord and it's circle-of-fifths distance will be calculated
+            #if it gets here, then it's a diatonic chord and its circle-of-fifths distance will be calculated
             #we divide the index by 12 to create a gambiarra in which same chords with different names return
             #the same index value, like "C#" and "Db"
             if (self.chord.is_major()):
