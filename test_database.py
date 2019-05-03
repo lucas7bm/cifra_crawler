@@ -25,7 +25,7 @@ TEST_DATABASE = [
     ("https://www.cifraclub.com.br/vinicius-de-moraes/eu-sei-que-vou-te-amar/", 'F'),
 
     ("https://www.cifraclub.com.br/toquinho/aquarela/", 'G'),
-    ("https://www.cifraclub.com.br/toquinho/caderno/", 'Gm'),
+    ("https://www.cifraclub.com.br/toquinho/caderno/", 'C'),
     ("https://www.cifraclub.com.br/toquinho/era-uma-casa/", 'A'),
     ("https://www.cifraclub.com.br/tom-jobim/aguas-de-marco/", 'B'),
     ("https://www.cifraclub.com.br/caetano-veloso/sozinho/", 'D'),
@@ -353,24 +353,6 @@ TDB = [
     ("https://www.cifraclub.com/adriana-calcanhotto/fico-assim-sem-voce/", 'A'),
     ("https://www.cifraclub.com/alceu-valenca/anunciacao/", 'G'),
     ("https://www.cifraclub.com/alceu-valenca/la-belle-du-jour/", 'C'),
-
-    ("https://www.cifraclub.com.br/baden-powell/canto-de-ossanha/", 'Dm'),
-    ("https://www.cifraclub.com.br/baden-powell/samba-em-preludio/", 'Bm'),
-    ("https://www.cifraclub.com.br/baden-powell/berimbau/", 'Dm'),
-    ("https://www.cifraclub.com.br/baden-powell/tristeza-solidao/", 'Dm'),
-    ("https://www.cifraclub.com.br/baden-powell/samba-triste/", 'Am'),
-
-    ("https://www.cifraclub.com.br/vinicius-de-moraes/onde-anda-voce/", 'C'),
-    ("https://www.cifraclub.com.br/vinicius-de-moraes/garota-de-ipanema/", 'F'),
-    ("https://www.cifraclub.com.br/vinicius-de-moraes/chega-de-saudade/", 'D'),
-    ("https://www.cifraclub.com.br/vinicius-de-moraes/pela-luz-dos-olhos-teus/", 'F'),
-    ("https://www.cifraclub.com.br/vinicius-de-moraes/eu-sei-que-vou-te-amar/", 'F'),
-
-    ("https://www.cifraclub.com.br/toquinho/aquarela/", 'G'),
-    ("https://www.cifraclub.com.br/toquinho/caderno/", 'Gm'),
-    ("https://www.cifraclub.com.br/toquinho/era-uma-casa/", 'A'),
-    ("https://www.cifraclub.com.br/tom-jobim/aguas-de-marco/", 'B'),
-    ("https://www.cifraclub.com.br/caetano-veloso/sozinho/", 'D'),
 
 ]
 

@@ -3,7 +3,7 @@ from pychord.constants.scales import HARMONIC_FIELDS
 from tonal_pitch_space import TonalPitchSpace
 from bs4 import BeautifulSoup
 from test_database import TEST_DATABASE, TDB
-import requests, time
+import requests, time, traceback
 import matplotlib.pyplot as plt
 
 class Cifra:
@@ -77,63 +77,3 @@ class Cifra:
         for field in HARMONIC_FIELDS:
             fields_distances.append([self.harmonic_field_distance(Chord(field)), field])
         self.fields_distances = sorted(fields_distances)
-
-i=0
-for x in TEST_DATABASE:
-    if(x.__getitem__(0) != ""):
-        i += 1
-        print(i, ": ", x.__getitem__(0))
-
-
-less_than_seven = []
-seven_to_twelve = []
-twelve_to_twenty = []
-more_than_twenty = []
-
-start_time = time.time()
-
-test_data = []
-record_of_chords = 0
-
-for x in TEST_DATABASE:
-    if(x.__getitem__(0) != ""):
-        cifra = Cifra(x.__getitem__(0))
-        test_data.append(cifra)
-        if cifra.present_chords.__len__() > record_of_chords:
-            most_complex_song = cifra
-            record_of_chords = cifra.present_chords.__len__()
-
-        #Criando as categorias de complexidade
-        if cifra.present_chords.__len__() > 20:
-            more_than_twenty.append(cifra.url)
-            continue
-        if cifra.present_chords.__len__() > 12:
-            twelve_to_twenty.append(cifra.url)
-            continue
-        if cifra.present_chords.__len__() > 7:
-            seven_to_twelve.append(cifra.url)
-            continue
-        else:
-            less_than_seven.append(cifra.url)
-
-print("Cifra mais complexa: ", most_complex_song.url, ", com ", record_of_chords, " acordes.")
-print(most_complex_song.problematic_chords)
-
-print("\n\n>20: ", more_than_twenty.__len__())
-print("13-20: ", twelve_to_twenty.__len__())
-print("8-12: ", seven_to_twelve.__len__())
-print("<7: ", less_than_seven.__len__())
-
-
-print("\n\n>20: ", more_than_twenty)
-print("13-20: ", twelve_to_twenty)
-print("8-12: ", seven_to_twelve)
-print("<7: ", less_than_seven)
-
-values = [0] * 50
-for x in test_data:
-    values[x.present_chords.__len__()] += 1
-
-print(values)
-
-print("--- %s seconds ---" % (time.time() - start_time))
