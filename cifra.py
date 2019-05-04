@@ -9,6 +9,9 @@ import matplotlib.pyplot as plt
 class Cifra:
     """ Classe que representa uma cifra musical
     :param str url: A URL de origem da cifra
+    :param double FIRST_CHORD_CONSTANT
+    :param double LAST_CHORD_CONSTANT
+    :param double BOTH_CHORDS_CONSTANT
     """
 
     # Esta classe representa uma cifra musical com o intuito de ser processada depois.
@@ -24,8 +27,12 @@ class Cifra:
     #                        É ordenado da menor distância (tonalidade mais provável) para a maior.
     #            found_tone: A tonalidade encontrada,
 
-    def __init__(self, url):
+    def __init__(self, url, BOTH_CHORDS_CONSTANT, FIRST_CHORD_CONSTANT, LAST_CHORD_CONSTANT):
         self.url = url
+        self.FIRST_CHORD_CONSTANT = FIRST_CHORD_CONSTANT
+        self.LAST_CHORD_CONSTANT = LAST_CHORD_CONSTANT
+        self.BOTH_CHORDS_CONSTANT = BOTH_CHORDS_CONSTANT
+
         song_page = requests.get(url)
         soup_song = BeautifulSoup(song_page.text, 'lxml')
 
@@ -70,6 +77,16 @@ class Cifra:
         distance = 0
         for chord in self.parsed_chords:
             distance += tonal_pitch_space.distance(chord)
+
+
+        if (self.parsed_chords[0].triad(False) == self.parsed_chords[-1].triad(False) == field.triad(False)):
+            distance *= self.BOTH_CHORDS_CONSTANT
+        else:
+            if (self.parsed_chords[0].triad(False) == field.triad(False)):
+                distance *= self.FIRST_CHORD_CONSTANT
+            if (self.parsed_chords[-1].triad(False) == field.triad(False)):
+                distance *= self.LAST_CHORD_CONSTANT
+
         return distance
 
     def estimate_tonality(self):

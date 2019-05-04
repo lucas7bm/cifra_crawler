@@ -90,9 +90,9 @@ TEST_DATABASE = [
     ("https://www.cifraclub.com/zeca-baleiro/babylon/", 'Dm'),
     ("https://www.cifraclub.com/simone/vendedor-de-sonhos/", 'F#'),
 
-    ("https://www.cifraclub.com/milton-nascimento/cacador-de-mim/", 'G'),
+    ("https://www.cifraclub.com/milton-nascimento/cacador-de-mim/", 'C'),
     ("https://www.cifraclub.com/milton-nascimento/beatriz/", 'E'),
-    ("https://www.cifraclub.com/gilberto-gil/sitio-do-pica-pau-amarelo/", 'G'),
+    ("https://www.cifraclub.com/gilberto-gil/sitio-do-pica-pau-amarelo/", 'D'),
     ("https://www.cifraclub.com/gilberto-gil/eu-so-quero-um-xodo/", 'F'),
     ("https://www.cifraclub.com/gilberto-gil/esperando-na-janela/", 'E'),
 
@@ -105,7 +105,7 @@ TEST_DATABASE = [
 
     ("https://www.cifraclub.com/seu-jorge/mina-do-condominio/", 'Bm'),
     ("https://www.cifraclub.com/seu-jorge/amiga-da-minha-mulher/", 'Am'),
-    ("https://www.cifraclub.com/seu-jorge/e-isso-ai/", ''),
+    ("https://www.cifraclub.com/seu-jorge/e-isso-ai/", 'G'),
     ("https://www.cifraclub.com.br/tim-maia/gostava-tanto-de-voce/", 'A'),
     ("https://www.cifraclub.com.br/tim-maia/ela-partiu/", 'Am'),
 
@@ -158,7 +158,7 @@ TEST_DATABASE = [
     ("https://www.cifraclub.com.br/erasmo-carlos/a-carta/", 'F'),
     ("https://www.cifraclub.com.br/roberto-carlos/o-calhambeque-road-hog/", 'F#'),
     ("https://www.cifraclub.com.br/roberto-carlos/parei-na-contramao/", 'B'),
-    ("https://www.cifraclub.com.br/roberto-carlos/e-preciso-saber-viver/", 'E'),
+    ("https://www.cifraclub.com.br/roberto-carlos/e-preciso-saber-viver/", 'D'),
     #Jazz
     ("https://www.cifraclub.com.br/chet-baker/i-fall-in-love-too-easily/", 'D#'),
     ("https://www.cifraclub.com/frank-sinatra/fly-me-to-the-moon/", 'C'),
@@ -307,12 +307,12 @@ TEST_DATABASE = [
     ("https://www.cifraclub.com.br/beirut/elephant-gun/", 'D'),
     ("https://www.cifraclub.com.br/gary-jules/mad-world/", 'Fm'),
     ("https://www.cifraclub.com.br/rubel/quando-bate-aquela-saudade/", 'G'),
-    ("https://www.cifraclub.com.br/pearl-jam/black/", 'E'),
+    ("https://www.cifraclub.com.br/pearl-jam/black/", 'Em'),
 
     ("https://www.cifraclub.com.br/nirvana/come-as-you-are/", 'F#m'),
     ("https://www.cifraclub.com.br/imagine-dragons/demons/", 'C'),
     ("https://www.cifraclub.com.br/foster-the-people/pumped-up-kicks/", 'Fm'),
-    ("https://www.cifraclub.com.br/a-great-big-world/say-something/", 'Bm'),
+    ("https://www.cifraclub.com.br/a-great-big-world/say-something/", 'D'),
     ("", ''),
 
     #Pop
