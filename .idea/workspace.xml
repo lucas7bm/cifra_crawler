@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="0112b298-3f39-4e23-a0cb-7868677d3b5e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testChords.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cifra.py" beforeDir="false" afterPath="$PROJECT_DIR$/cifra.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pychord/constants/qualities.py" beforeDir="false" afterPath="$PROJECT_DIR$/pychord/constants/qualities.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pychord/constants/scales.py" beforeDir="false" afterPath="$PROJECT_DIR$/pychord/constants/scales.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results.txt" beforeDir="false" afterPath="$PROJECT_DIR$/results.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_database.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_database.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +21,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cifra.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1155">
-              <caret line="83" column="13" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
+            <state relative-caret-position="247">
+              <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -30,8 +33,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/evaluation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+            <state relative-caret-position="290">
+              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -40,10 +43,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tonal_pitch_space.py">
+        <entry file="file://$PROJECT_DIR$/results.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="51" selection-start-line="51" selection-end-line="51" />
+            <state relative-caret-position="-1344">
+              <caret line="272" column="69" selection-start-line="272" selection-start-column="69" selection-end-line="272" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -51,17 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pychord/constants/qualities.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1080">
-              <caret line="72" column="20" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_database.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="66" selection-start-line="30" selection-start-column="66" selection-end-line="30" selection-end-column="66" />
+            <state relative-caret-position="177">
+              <caret line="149" column="10" selection-start-line="149" selection-start-column="6" selection-end-line="149" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -69,8 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pychord/constants/scales.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1230">
-              <caret line="82" selection-start-line="82" selection-end-line="82" />
+            <state>
+              <caret line="57" column="17" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -86,14 +85,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>estilo</find>
-      <find>itemprop</find>
-      <find>js-modal-trigger</find>
-      <find>soupChords</find>
-      <find>songsLinks</find>
-      <find>0, 5,</find>
-      <find>4, 10</find>
-      <find>slash</find>
       <find>'m7'</find>
       <find>CIRCLE_1</find>
       <find>m7(5b</find>
@@ -114,6 +105,16 @@
       <find>print</find>
       <find>start</find>
       <find>say-some</find>
+      <find>found</find>
+      <find>17, 21</find>
+      <find>7M</find>
+      <find>11+</find>
+      <find>m4</find>
+      <find>4+</find>
+      <find>13</find>
+      <find>'4'</find>
+      <find>7(9-</find>
+      <find>rolling</find>
     </findStrings>
     <replaceStrings>
       <replace>soup_chords</replace>
@@ -148,14 +149,17 @@
         <option value="$PROJECT_DIR$/pychord/quality.py" />
         <option value="$PROJECT_DIR$/pychord/chord.py" />
         <option value="$PROJECT_DIR$/pychord/constants/test_database.py" />
-        <option value="$PROJECT_DIR$/pychord/constants/scales.py" />
         <option value="$PROJECT_DIR$/tonal_pitch_space.py" />
         <option value="$PROJECT_DIR$/testChords.py" />
+        <option value="$PROJECT_DIR$/TESTS.py" />
+        <option value="$PROJECT_DIR$/Evaluation.py" />
+        <option value="$PROJECT_DIR$/pychord/constants/scales.py" />
+        <option value="$PROJECT_DIR$/cifra.py" />
+        <option value="$PROJECT_DIR$/results.txt" />
+        <option value="$PROJECT_DIR$/random_tests.py" />
         <option value="$PROJECT_DIR$/pychord/constants/qualities.py" />
         <option value="$PROJECT_DIR$/test_database.py" />
-        <option value="$PROJECT_DIR$/TESTS.py" />
-        <option value="$PROJECT_DIR$/cifra.py" />
-        <option value="$PROJECT_DIR$/Evaluation.py" />
+        <option value="$PROJECT_DIR$/evaluation.py" />
       </list>
     </option>
   </component>
@@ -274,6 +278,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="random_tests" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="CifraCrawler" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/random_tests.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="true" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="testChords (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="CifraCrawler" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -337,41 +362,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tonal_pitch_space" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="CifraCrawler" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tonal_pitch_space.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="true" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.testChords" />
-      <item itemvalue="Python.tonal_pitch_space" />
       <item itemvalue="Python.cifra" />
       <item itemvalue="Python.test_database" />
       <item itemvalue="Python.testChords (1)" />
+      <item itemvalue="Python.random_tests" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.testChords" />
-        <item itemvalue="Python.testChords (1)" />
+        <item itemvalue="Python.random_tests" />
         <item itemvalue="Python.cifra" />
+        <item itemvalue="Python.testChords (1)" />
         <item itemvalue="Python.test_database" />
-        <item itemvalue="Python.tonal_pitch_space" />
       </list>
     </recent_temporary>
   </component>
@@ -412,19 +416,19 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="70" y="27" width="1850" height="1053" extended-state="6" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18992884" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1829204" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32864866" />
-      <window_info anchor="bottom" x="1069" y="143" width="844" height="551" id="Run" order="2" weight="0.329718" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32824427" />
+      <window_info anchor="bottom" x="1069" y="143" width="844" height="551" id="Run" order="2" visible="true" weight="0.3293348" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39891893" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3293348" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32864866" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32972974" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32972974" />
@@ -524,48 +528,61 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testChords.py" />
     <entry file="file://$PROJECT_DIR$/TESTS.py" />
+    <entry file="file://$PROJECT_DIR$/cifras.obj">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/cifra.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="83" column="13" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
+        <state relative-caret-position="247">
+          <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pychord/constants/scales.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="57" column="17" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tonal_pitch_space.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="1055">
+          <caret line="90" selection-start-line="90" selection-end-line="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/random_tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pychord/constants/qualities.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="72" column="20" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
+        <state relative-caret-position="177">
+          <caret line="149" column="10" selection-start-line="149" selection-start-column="6" selection-end-line="149" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_database.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="66" selection-start-line="30" selection-start-column="66" selection-end-line="30" selection-end-column="66" />
+        <state relative-caret-position="-1344">
+          <caret line="272" column="69" selection-start-line="272" selection-start-column="69" selection-end-line="272" selection-end-column="69" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pychord/constants/scales.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1230">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/results.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/evaluation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+        <state relative-caret-position="290">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

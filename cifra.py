@@ -27,11 +27,8 @@ class Cifra:
     #                        É ordenado da menor distância (tonalidade mais provável) para a maior.
     #            found_tone: A tonalidade encontrada,
 
-    def __init__(self, url, BOTH_CHORDS_CONSTANT, FIRST_CHORD_CONSTANT, LAST_CHORD_CONSTANT):
+    def __init__(self, url):
         self.url = url
-        self.FIRST_CHORD_CONSTANT = FIRST_CHORD_CONSTANT
-        self.LAST_CHORD_CONSTANT = LAST_CHORD_CONSTANT
-        self.BOTH_CHORDS_CONSTANT = BOTH_CHORDS_CONSTANT
 
         song_page = requests.get(url)
         soup_song = BeautifulSoup(song_page.text, 'lxml')
@@ -67,12 +64,9 @@ class Cifra:
         if (self.problematic_chords.__len__() == 0):
             self.fully_parsed = True
 
-        self.fields_distances = [()]
-        self.estimate_tonality()
-        self.found_tone = self.fields_distances[0].__getitem__(1)
+        self.fields_distances = []
 
-
-    def harmonic_field_distance(self, field):
+    def harmonic_field_distance(self, field, BOTH_CHORDS_CONSTANT, FIRST_CHORD_CONSTANT, LAST_CHORD_CONSTANT):
         tonal_pitch_space = TonalPitchSpace(field)
         distance = 0
         for chord in self.parsed_chords:
@@ -80,17 +74,18 @@ class Cifra:
 
 
         if (self.parsed_chords[0].triad(False) == self.parsed_chords[-1].triad(False) == field.triad(False)):
-            distance *= self.BOTH_CHORDS_CONSTANT
+            distance *= BOTH_CHORDS_CONSTANT
         else:
             if (self.parsed_chords[0].triad(False) == field.triad(False)):
-                distance *= self.FIRST_CHORD_CONSTANT
+                distance *= FIRST_CHORD_CONSTANT
             if (self.parsed_chords[-1].triad(False) == field.triad(False)):
-                distance *= self.LAST_CHORD_CONSTANT
-
+                distance *= LAST_CHORD_CONSTANT
         return distance
 
-    def estimate_tonality(self):
+    def estimate_tonality(self, BOTH_CHORDS_CONSTANT, FIRST_CHORD_CONSTANT, LAST_CHORD_CONSTANT):
         fields_distances = []
         for field in HARMONIC_FIELDS:
-            fields_distances.append([self.harmonic_field_distance(Chord(field)), field])
+            fields_distances.append([self.harmonic_field_distance(Chord(field), BOTH_CHORDS_CONSTANT, FIRST_CHORD_CONSTANT, LAST_CHORD_CONSTANT), field])
         self.fields_distances = sorted(fields_distances)
+        self.found_tone = self.fields_distances[0].__getitem__(1)
+        return self.found_tone

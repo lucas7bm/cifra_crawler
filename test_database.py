@@ -248,6 +248,42 @@ TEST_DATABASE = [
     ("https://www.cifraclub.com.br/the-beatles/here-comes-the-sun-483/", 'D'),
     ("https://www.cifraclub.com.br/the-beatles/help/", 'A'),
 
+    ("https://www.cifraclub.com.br/david-bowie/a-space-oddity/", 'C'),
+    ("https://www.cifraclub.com.br/david-bowie/starman/", 'F'),
+    ("https://www.cifraclub.com.br/david-bowie/moonage-daydream/", 'D'),
+    ("https://www.cifraclub.com.br/the-who/behind-blue-eyes/", 'Em'),
+    ("https://www.cifraclub.com.br/the-rolling-stones/like-rolling-stone/", 'C'),
+
+    ("https://www.cifraclub.com.br/the-rolling-stones/satisfaction/", 'E'),
+    ("https://www.cifraclub.com.br/the-rolling-stones/sympathy-for-the-devil/", 'E'),
+    ("https://www.cifraclub.com.br/the-kinks/sunny-afternoon/", 'Dm'),
+    ("https://www.cifraclub.com.br/led-zeppelin/stairway-to-heaven/", 'Am'),
+    ("https://www.cifraclub.com.br/pink-floyd/breathe/", 'Em'),
+
+    ("https://www.cifraclub.com.br/pink-floyd/brain-damage/", 'D'),
+    ("https://www.cifraclub.com.br/pink-floyd/coming-back-to-life/", 'C'),
+    ("https://www.cifraclub.com.br/pink-floyd/wish-you-were-here/", 'G'),
+    ("https://www.cifraclub.com.br/pink-floyd/comfortably-numb/", 'Bm'),
+    ("https://www.cifraclub.com.br/pink-floyd/another-brick-in-the-wall/", 'Dm'),
+
+    ("https://www.cifraclub.com.br/pink-floyd/mother/", 'G'),
+    ("https://www.cifraclub.com.br/pink-floyd/money/", 'Bm'),
+    ("https://www.cifraclub.com.br/black-sabbath/changes/", 'C'),
+    ("https://www.cifraclub.com.br/deep-purple/sometimes-feel-like-screaming/tssjt.html", 'Dm'),
+    ("https://www.cifraclub.com.br/talking-heads/psycho-killer/", 'Am'),
+
+    ("", ''),
+    ("", ''),
+    ("", ''),
+    ("", ''),
+    ("", ''),
+
+    ("", ''),
+    ("", ''),
+    ("", ''),
+    ("", ''),
+    ("", ''),
+
     ("", ''),
     ("", ''),
     ("", ''),
@@ -294,9 +330,6 @@ TEST_DATABASE = [
     ("https://www.cifraclub.com.br/bee-gees/i-started-joke/", 'G'),
 
     ("https://www.cifraclub.com.br/bee-gees/too-much-heaven/", 'D'),
-    ("", ''),
-    ("", ''),
-    ("", ''),
     ("", ''),
     ("", ''),
 
