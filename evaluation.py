@@ -1,5 +1,7 @@
 import time
 import pickle
+from tonal_pitch_space import TonalPitchSpace
+from pychord import Chord
 
 def evaluate_group(test_data, BOTH_CONSTANT, FIRST_CONSTANT, LAST_CONSTANT):
     probl_chords = []
@@ -41,19 +43,19 @@ def evaluate(BOTH_CONSTANT, FIRST_CONSTANT, LAST_CONSTANT):
     up_to_seven= []
 
     for x in test_data:
-        if x.__getitem__(0).present_chords.__len__() > 20:
+        if x.__getitem__(0).present_chords.__len__() > 12:
             more_than_twenty.append(x)
-        elif x.__getitem__(0).present_chords.__len__() > 12:
-            thirteen_to_twenty.append(x)
         elif x.__getitem__(0).present_chords.__len__() > 7:
+            thirteen_to_twenty.append(x)
+        elif x.__getitem__(0).present_chords.__len__() > 4:
             eight_to_twelve.append(x)
         else:
             up_to_seven.append(x)
 
-    print("\n  >20: ", more_than_twenty.__len__())
-    print(    "13-20: ", thirteen_to_twenty.__len__())
-    print(    " 8-12: ", eight_to_twelve.__len__())
-    print(    "   <7: ", up_to_seven.__len__(), "\n")
+    print("\n  >12: ", more_than_twenty.__len__())
+    print(    "8-12: ", thirteen_to_twenty.__len__())
+    print(    " 5-7: ", eight_to_twelve.__len__())
+    print(    "   <5: ", up_to_seven.__len__(), "\n")
 
     print("EVALUATION OF EACH COMPLEXITY CATEGORY")
     average = 0
@@ -73,19 +75,27 @@ def evaluate(BOTH_CONSTANT, FIRST_CONSTANT, LAST_CONSTANT):
     average += evaluate_group(up_to_seven, BOTH_CONSTANT, FIRST_CONSTANT, LAST_CONSTANT)
 
     print("\nEVALUATION OF THE WHOLE DATASET")
-    evaluate_group(test_data, BOTH_CONSTANT, FIRST_CONSTANT, LAST_CONSTANT)
+    eval = evaluate_group(test_data, BOTH_CONSTANT, FIRST_CONSTANT, LAST_CONSTANT)
+    print("Sucess rate: ", eval)
 
     average /= 4
-    print("Sucess rate (average): ", average)
+    print("Success rate (average): ", average)
 
-    print("\nEvaluation done in %s seconds" % (time.time() - start_time))
+    print("\nEvaluation done in %s seconds" % (time.time() - start_time) + "\n\nEND OF EVALUATION\n\n")
+
+    number_of_chords = [0] * 40
+    for x in test_data:
+        number_of_chords[x.__getitem__(0).present_chords.__len__() - 1] += 1
+
+    print(number_of_chords)
+
     return average
 
 start_time = time.time()
 
-both_constants = [0.82]
-first_constants = [0.91]
-last_constants = [0.92]
+both_constants = [0.91]
+first_constants = [0.92]
+last_constants = [0.82]
 
 f = open("results.txt", "w+")
 buffer = []

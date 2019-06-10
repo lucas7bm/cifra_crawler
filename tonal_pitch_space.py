@@ -12,6 +12,7 @@ class TonalPitchSpace:
     :param [int] level_b: level b, containing the root and the fifth
     :param [int] level_c: triadic level, containing all of the chord's notes
     :param [int] level_d: the diatonic level, containing the notes of the harmonic field (it's scale)
+    :param [int] level_e: the cromatic level, containing all notes
 
     """
     def __init__(self, chord):
@@ -30,9 +31,14 @@ class TonalPitchSpace:
         distance = 0
 
         try:
+            # print(len(set(self.level_a) ^ set([chord.triad(False)[0]])))
+            # print(len(set(self.level_b) ^ set([chord.triad(False)[0], chord.triad(False)[2]])))
+            # print(len(set(self.level_c) ^ set(chord.components(False))))
+            # print(set(chord.components(False)).difference(set(self.level_d)).__len__())
+
             distance += len(set(self.level_a) ^ set([chord.triad(False)[0]]))
             distance += len(set(self.level_b) ^ set([chord.triad(False)[0], chord.triad(False)[2]]))
-            distance += len(set(self.level_c) ^ set([chord.triad(False)[0], chord.triad(False)[1], chord.triad(False)[2]]))
+            distance += len(set(self.level_c) ^ set(chord.components(False)))
             distance += set(chord.components(False)).difference(set(self.level_d)).__len__()
 
             if(set(chord.triad(False)).issubset(set(self.level_d)) == False):
@@ -61,13 +67,16 @@ class TonalPitchSpace:
                 distance += 1
 
             return distance
-        except:
-            print("Oops")
+        except Exception as e:
+            print("Exception:")
+            print(e)
             return 0
 
 
-#tests
-# chd = TonalPitchSpace(Chord("Db"))
+##tests
+
+
+chd = TonalPitchSpace(Chord("C"))
 #
 # print("Dist C: ", chd.distance(Chord("C")))
 # print("Dist Dm: ", chd.distance(Chord("Dm")))
@@ -75,7 +84,15 @@ class TonalPitchSpace:
 # print("Dist F: ", chd.distance(Chord("F")))
 # print("Dist G: ", chd.distance(Chord("G")))
 # print("Dist Am: ", chd.distance(Chord("Am")))
-# print("Dist B: ", chd.distance(Chord("B")))
+# print("Dist Bdim: ", chd.distance(Chord("Bdim")))
+# print()
+# print("Dist C7M: ", chd.distance(Chord("Cmaj7")))
+# print("Dist Dm7: ", chd.distance(Chord("Dm7")))
+# print("Dist Em7: ", chd.distance(Chord("Em7")))
+# print("Dist F7M: ", chd.distance(Chord("Fmaj7")))
+# print("Dist G7: ", chd.distance(Chord("G7")))
+# print("Dist Am7: ", chd.distance(Chord("Am7")))
+# print("Dist Bdim7: ", chd.distance(Chord("Bdim7")))
 # print()
 # print("Dist Cm: ", chd.distance(Chord("Cm")))
 # print("Dist D: ", chd.distance(Chord("D")))
@@ -84,7 +101,10 @@ class TonalPitchSpace:
 # print("Dist Gm: ", chd.distance(Chord("Gm")))
 # print("Dist A: ", chd.distance(Chord("A")))
 # print("Dist Bm: ", chd.distance(Chord("Bm")))
+# print("Dist B: ", chd.distance(Chord("B")))
 # print()
-#
-# print("Dist minor: ", chd.distance(Chord("Dbm")))
-# print("Dist same: ", chd.distance(Chord("C#")))
+# print("Dist full: ", chd.distance(Chord("G#full")))
+# print("Dist Dm: ", chd.distance(Chord("Dm")))
+# print(Chord("Dm").components())
+# print("Dist Bdim: ", chd.distance(Chord("Bdim")))
+# print(Chord("Bdim").components())
