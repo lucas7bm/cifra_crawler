@@ -19,9 +19,9 @@ def evaluate_group(test_data, BOTH_CONSTANT, FIRST_CONSTANT, LAST_CONSTANT):
     #print("\n", probl_chords)
 
     print(len(incorrectly_analyzed), " mistakes on a group of ", test_data.__len__(), " songs.")
-    for x in incorrectly_analyzed:
-       print(x.__getitem__(0).url, " Given: ", x.__getitem__(0).given_tone, " - Found: ", x.__getitem__(0).found_tone, " - Correct: ", x.__getitem__(1))
-       print(x.__getitem__(0).fields_distances)
+    # for x in incorrectly_analyzed:
+    #    print(x.__getitem__(0).url, " Given: ", x.__getitem__(0).given_tone, " - Found: ", x.__getitem__(0).found_tone, " - Correct: ", x.__getitem__(1))
+    #    print(x.__getitem__(0).fields_distances)
     print("Success rate on group: ", '{:.3f}%'.format(100.00 - ((incorrectly_analyzed.__len__() / test_data.__len__()) * 100.00)))
     return 100.00 - ((incorrectly_analyzed.__len__() / test_data.__len__()) * 100.00)
 
@@ -38,24 +38,28 @@ def evaluate(BOTH_CONSTANT, FIRST_CONSTANT, LAST_CONSTANT):
 
     #If evaluating considering complexity categories
     more_than_twenty = []
-    thirteen_to_twenty = []
-    eight_to_twelve = []
-    up_to_seven= []
+    fifteen_to_twenty = []
+    nine_to_fourteen = []
+    five_to_eight = []
+    up_to_four = []
 
     for x in test_data:
-        if x.__getitem__(0).present_chords.__len__() > 12:
+        if x.__getitem__(0).present_chords.__len__() > 20:
             more_than_twenty.append(x)
-        elif x.__getitem__(0).present_chords.__len__() > 7:
-            thirteen_to_twenty.append(x)
-        elif x.__getitem__(0).present_chords.__len__() > 4:
-            eight_to_twelve.append(x)
+        if x.__getitem__(0).present_chords.__len__() > 14:
+            fifteen_to_twenty.append(x)
+        elif x.__getitem__(0).present_chords.__len__() > 8:
+            nine_to_fourteen.append(x)
+        elif x.__getitem__(0).present_chords.__len__() > 5:
+            five_to_eight.append(x)
         else:
-            up_to_seven.append(x)
+            up_to_four.append(x)
 
-    print("\n  >12: ", more_than_twenty.__len__())
-    print(    "8-12: ", thirteen_to_twenty.__len__())
-    print(    " 5-7: ", eight_to_twelve.__len__())
-    print(    "   <5: ", up_to_seven.__len__(), "\n")
+    print("\n    >20: ", more_than_twenty.__len__())
+    print(  "  15-20: ", fifteen_to_twenty.__len__())
+    print(  "   9-14: ", nine_to_fourteen.__len__())
+    print(  "    5-8: ", five_to_eight.__len__())
+    print(  "     <5: ", up_to_four.__len__(), "\n")
 
     print("EVALUATION OF EACH COMPLEXITY CATEGORY")
     average = 0
@@ -63,22 +67,25 @@ def evaluate(BOTH_CONSTANT, FIRST_CONSTANT, LAST_CONSTANT):
     average += evaluate_group(more_than_twenty, BOTH_CONSTANT, FIRST_CONSTANT, LAST_CONSTANT)
 
 
-    print("\n13-20  evaluation")
-    average += evaluate_group(thirteen_to_twenty, BOTH_CONSTANT, FIRST_CONSTANT, LAST_CONSTANT)
+    print("\n15-20  evaluation")
+    average += evaluate_group(fifteen_to_twenty, BOTH_CONSTANT, FIRST_CONSTANT, LAST_CONSTANT)
 
 
-    print("\n 8-12  evaluation")
-    average += evaluate_group(eight_to_twelve, BOTH_CONSTANT, FIRST_CONSTANT, LAST_CONSTANT)
+    print("\n 9-14  evaluation")
+    average += evaluate_group(nine_to_fourteen, BOTH_CONSTANT, FIRST_CONSTANT, LAST_CONSTANT)
 
 
-    print("\n   <7  evaluation")
-    average += evaluate_group(up_to_seven, BOTH_CONSTANT, FIRST_CONSTANT, LAST_CONSTANT)
+    print("\n   5-8  evaluation")
+    average += evaluate_group(five_to_eight, BOTH_CONSTANT, FIRST_CONSTANT, LAST_CONSTANT)
+
+    print("\n   <5  evaluation")
+    average += evaluate_group(up_to_four, BOTH_CONSTANT, FIRST_CONSTANT, LAST_CONSTANT)
 
     print("\nEVALUATION OF THE WHOLE DATASET")
     eval = evaluate_group(test_data, BOTH_CONSTANT, FIRST_CONSTANT, LAST_CONSTANT)
     print("Sucess rate: ", eval)
 
-    average /= 4
+    average /= 5
     print("Success rate (average): ", average)
 
     print("\nEvaluation done in %s seconds" % (time.time() - start_time) + "\n\nEND OF EVALUATION\n\n")
@@ -93,9 +100,9 @@ def evaluate(BOTH_CONSTANT, FIRST_CONSTANT, LAST_CONSTANT):
 
 start_time = time.time()
 
-both_constants = [0.91]
-first_constants = [0.92]
-last_constants = [0.82]
+both_constants = [0.82]
+first_constants = [0.91]
+last_constants = [0.92]
 
 f = open("results.txt", "w+")
 buffer = []

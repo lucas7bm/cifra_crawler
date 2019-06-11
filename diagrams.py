@@ -2,7 +2,7 @@ import pickle
 from tonal_pitch_space import TonalPitchSpace
 from pychord import Chord
 
-def tps_venn(pitch):
+def chords_and_distances(pitch):
     filehandler = open('cifras.pickle', 'rb')
     cifras = pickle.load(filehandler)
     chords = []
@@ -47,4 +47,47 @@ def tps_venn(pitch):
     for x in sorted(chordal_distances):
         print(x.__getitem__(0), ":\t ", [v.chord for v in x.__getitem__(1)])
 
-tps_venn("C")
+def genres():
+    filehandler = open('cifras.pickle', 'rb')
+    cifras = pickle.load(filehandler)
+    cifras = [x.__getitem__(0) for x in cifras]
+
+    genres_array = []
+    for x in cifras:
+        exists_genre = False
+        for tuple in genres_array:
+            if x.genre == tuple.__getitem__(0):
+                tuple.__getitem__(1).append(x.url)
+                exists_genre = True
+
+        if not exists_genre:
+            genres_array.append((x.genre, [x.url]))
+
+    for tuple in sorted(genres_array):
+        print(tuple.__getitem__(0), ":", len(tuple.__getitem__(1)))
+
+    print("Total of ", len(genres_array), " genres.")
+
+def artists():
+    filehandler = open('cifras.pickle', 'rb')
+    cifras = pickle.load(filehandler)
+    cifras = [x.__getitem__(0) for x in cifras]
+
+    artist_array = []
+    for x in cifras:
+        exists_artist = False
+        for tuple in artist_array:
+            if x.artist == tuple.__getitem__(0):
+                tuple.__getitem__(1).append(x.url)
+                exists_artist = True
+
+        if not exists_artist:
+            artist_array.append((x.artist, [x.url]))
+    print("Total of ", len(artist_array), " artists.")
+    # for tuple in sorted(artist_array):
+    #     print(tuple.__getitem__(0), ":", len(tuple.__getitem__(1)))
+
+#chords_and_distances("C")
+genres()
+print()
+artists()
